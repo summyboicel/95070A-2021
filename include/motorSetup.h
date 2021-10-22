@@ -19,6 +19,9 @@ const int FRPort = 7;
 const int BLPort = 11;
 const int BRPort = 5;
 const int PBPort = 10;
+const int FBRPort = 8;
+const int FBLPort = 9;
+const int CPort = 12;
 
 
 pros::Controller control (pros::E_CONTROLLER_MASTER);
@@ -37,6 +40,8 @@ ControllerButton up(ControllerDigital::up);
 ControllerButton down(ControllerDigital::down);
 /*
 pros::Controller control (E_CONTROLLER_MASTER);*/
+pros::Motor Clamp(CPort, false);
+
 pros::Motor FrontLeft(FLPort, true);
 pros::Motor FrontRight(FRPort, false);
 pros::Motor BackLeft(BLPort, true);

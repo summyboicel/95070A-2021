@@ -11,6 +11,8 @@ std::shared_ptr<ChassisController> drive =
         .build();
 std::shared_ptr<AsyncPositionController<double, double>> liftControl =
     AsyncPosControllerBuilder().withMotor(PBPort).build();
+std::shared_ptr<AsyncPositionController<double, double>> fourbar =
+    AsyncPosControllerBuilder().withMotor({FBRPort,-FBLPort}).build();
 
 //This file has all of the autonomous
 void disabledAuton(){

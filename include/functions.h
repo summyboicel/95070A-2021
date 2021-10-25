@@ -1,5 +1,5 @@
-#include "main.h"
-#include "motorSetup.h"
+#include "../include/main.h"
+#include "../include/motorSetup.h"
 
 okapi::Controller master;
 //Useful Constants
@@ -39,6 +39,11 @@ void driverControl(double l, double r){
 	FrontRight.move_velocity(r);
 	BackLeft.move_velocity(l);
 	BackRight.move_velocity(r);
+}
+
+void fourbarmove(double speed){
+  FBarR.move(speed);
+  FBarL.move(speed);
 }
 /*
 //For debugging things

@@ -1,7 +1,5 @@
-#include "main.h"
-#include  "autonomous.h"
-
-
+#include "../include/main.h"
+#include  "../include/autonomous.h"
 
 
 void leftBtn(){
@@ -20,6 +18,13 @@ void initialize() {
 	pros::lcd::register_btn1_cb(centerBtn);
 	pros::lcd::register_btn2_cb(rightBtn);
 	Clamp.set_brake_mode(MOTOR_BRAKE_HOLD);
+	FBarL.set_brake_mode(MOTOR_BRAKE_HOLD);
+	FBarR.set_brake_mode(MOTOR_BRAKE_HOLD);
+	FrontLeft.set_brake_mode(MOTOR_BRAKE_HOLD);
+	FrontRight.set_brake_mode(MOTOR_BRAKE_HOLD);
+	BackLeft.set_brake_mode(MOTOR_BRAKE_HOLD);
+	BackRight.set_brake_mode(MOTOR_BRAKE_HOLD);
+
   autonSelector();
 
 	//autonSelector();
@@ -62,17 +67,28 @@ const int heights[NUM_HEIGHTS] = {height1, height2,height3};
 const int heights2[NUM_HEIGHTS] = {0, 700,1800};
 
 
+
 void opcontrol() {
 	Clamp.tare_position();
   int goalHeight = 0;
+	double prevr = 0;
+	double prevl = 0;
   while (true){
 		double power = control.get_analog(ANALOG_LEFT_Y);
 		double turn = control.get_analog(ANALOG_LEFT_X);
-		driverControl(2*power+turn, 2*power-turn);
-		if (A.changedToPressed()){
+		double left = (2*power + turn + prevl)/2;
+		double right = (2*power - turn + prevr)/2;
+		prevr = right;
+		prevl = left;
+		driverControl(prevl, prevr);
+		/*
+		double right = control.get_analog(ANALOG_RIGHT_Y);
+		double left = control.get_analog(ANALOG_LEFT_Y);
+		driverControl(left,right);*/
+		if (up.changedToPressed()){
 			Clamp.move_absolute(800, 100);
 		}
-		if (B.changedToPressed()){
+		if (down.changedToPressed()){
 			Clamp.move_absolute(0, 100);
 		}
     if (RUp.changedToPressed() && goalHeight < NUM_HEIGHTS - 1) {
@@ -82,13 +98,14 @@ void opcontrol() {
       goalHeight--;
       liftControl->setTarget(heights[goalHeight]);
     }
-		if (LUp.changedToPressed() && goalHeight < NUM_HEIGHTS - 1) {
-      goalHeight++;
-      fourbar->setTarget(heights2[goalHeight]);
-    } else if (LDown.changedToPressed() && goalHeight > 0) {
-      goalHeight--;
-      fourbar->setTarget(heights2[goalHeight]);
-    }
+		if (control.get_digital(E_CONTROLLER_DIGITAL_L1)) {
+      fourbarmove(200);
+
+    } else if (control.get_digital(E_CONTROLLER_DIGITAL_L2)) {
+      fourbarmove(-86);
+    } else {
+			fourbarmove(0);
+		}
     pros::delay(20);
   }
 }

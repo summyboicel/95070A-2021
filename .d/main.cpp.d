@@ -1,7 +1,8 @@
-bin/main.cpp.o: src/main.cpp include/main.h include/api.h \
- include/pros/adi.h include/pros/colors.h include/pros/distance.h \
- include/pros/ext_adi.h include/pros/adi.h include/pros/adi.h \
- include/pros/gps.h include/pros/imu.h include/pros/llemu.h \
+bin/main.cpp.o: src/main.cpp src/../include/main.h src/../include/api.h \
+ src/../include/pros/adi.h src/../include/pros/colors.h \
+ src/../include/pros/distance.h src/../include/pros/ext_adi.h \
+ src/../include/pros/adi.h include/pros/adi.h src/../include/pros/gps.h \
+ src/../include/pros/imu.h src/../include/pros/llemu.h \
  include/display/lvgl.h include/display/lv_version.h \
  include/display/lv_misc/lv_log.h include/display/lv_conf.h \
  include/display/lv_conf_checker.h include/display/lv_misc/lv_task.h \
@@ -63,17 +64,22 @@ bin/main.cpp.o: src/main.cpp include/main.h include/api.h \
  include/display/lv_objx/lv_arc.h include/display/lv_objx/lv_preload.h \
  include/display/lv_objx/lv_arc.h include/display/lv_objx/lv_calendar.h \
  include/display/lv_objx/lv_spinbox.h include/display/lv_objx/lv_ta.h \
- include/pros/misc.h include/pros/motors.h include/pros/optical.h \
- include/api.h include/pros/rtos.h include/pros/rotation.h \
- include/pros/screen.h include/pros/colors.h include/pros/vision.h \
- include/pros/adi.hpp include/pros/distance.hpp include/pros/distance.h \
- include/pros/gps.hpp include/pros/gps.h include/pros/imu.hpp \
- include/pros/imu.h include/pros/llemu.hpp include/pros/llemu.h \
- include/pros/misc.hpp include/pros/misc.h include/pros/motors.hpp \
- include/pros/motors.h include/pros/optical.hpp include/pros/optical.h \
- include/pros/rotation.hpp include/pros/rotation.h include/pros/rtos.hpp \
- include/pros/rtos.h include/pros/screen.hpp include/pros/screen.h \
- include/pros/vision.hpp include/pros/vision.h include/okapi/api.hpp \
+ src/../include/pros/misc.h src/../include/pros/motors.h \
+ src/../include/pros/optical.h include/api.h src/../include/pros/rtos.h \
+ src/../include/pros/rotation.h src/../include/pros/screen.h \
+ include/pros/colors.h src/../include/pros/vision.h \
+ src/../include/pros/adi.hpp src/../include/pros/distance.hpp \
+ include/pros/distance.h src/../include/pros/gps.hpp include/pros/gps.h \
+ src/../include/pros/imu.hpp include/pros/imu.h \
+ src/../include/pros/llemu.hpp include/pros/llemu.h \
+ src/../include/pros/misc.hpp include/pros/misc.h \
+ src/../include/pros/motors.hpp include/pros/motors.h \
+ src/../include/pros/optical.hpp include/pros/optical.h \
+ src/../include/pros/rotation.hpp include/pros/rotation.h \
+ src/../include/pros/rtos.hpp include/pros/rtos.h \
+ src/../include/pros/screen.hpp include/pros/screen.h \
+ src/../include/pros/vision.hpp include/pros/vision.h \
+ src/../include/okapi/api.hpp \
  include/okapi/api/chassis/controller/chassisControllerIntegrated.hpp \
  include/okapi/api/chassis/controller/chassisController.hpp \
  include/okapi/api/chassis/controller/chassisScales.hpp \
@@ -190,19 +196,21 @@ bin/main.cpp.o: src/main.cpp include/main.h include/api.h \
  include/okapi/api/units/QMass.hpp include/okapi/api/units/QJerk.hpp \
  include/okapi/api/units/QPressure.hpp \
  include/okapi/api/units/QTorque.hpp include/okapi/api/units/QVolume.hpp \
- include/okapi/impl/util/rate.hpp include/autonomous.h include/main.h \
- include/functions.h include/motorSetup.h
-include/main.h:
-include/api.h:
+ include/okapi/impl/util/rate.hpp src/../include/autonomous.h \
+ src/../include/main.h src/../include/functions.h \
+ src/../include/../include/main.h src/../include/../include/motorSetup.h \
+ src/../include/../include/main.h
+src/../include/main.h:
+src/../include/api.h:
+src/../include/pros/adi.h:
+src/../include/pros/colors.h:
+src/../include/pros/distance.h:
+src/../include/pros/ext_adi.h:
+src/../include/pros/adi.h:
 include/pros/adi.h:
-include/pros/colors.h:
-include/pros/distance.h:
-include/pros/ext_adi.h:
-include/pros/adi.h:
-include/pros/adi.h:
-include/pros/gps.h:
-include/pros/imu.h:
-include/pros/llemu.h:
+src/../include/pros/gps.h:
+src/../include/pros/imu.h:
+src/../include/pros/llemu.h:
 include/display/lvgl.h:
 include/display/lv_version.h:
 include/display/lv_misc/lv_log.h:
@@ -308,39 +316,39 @@ include/display/lv_objx/lv_arc.h:
 include/display/lv_objx/lv_calendar.h:
 include/display/lv_objx/lv_spinbox.h:
 include/display/lv_objx/lv_ta.h:
-include/pros/misc.h:
-include/pros/motors.h:
-include/pros/optical.h:
+src/../include/pros/misc.h:
+src/../include/pros/motors.h:
+src/../include/pros/optical.h:
 include/api.h:
-include/pros/rtos.h:
-include/pros/rotation.h:
-include/pros/screen.h:
+src/../include/pros/rtos.h:
+src/../include/pros/rotation.h:
+src/../include/pros/screen.h:
 include/pros/colors.h:
-include/pros/vision.h:
-include/pros/adi.hpp:
-include/pros/distance.hpp:
+src/../include/pros/vision.h:
+src/../include/pros/adi.hpp:
+src/../include/pros/distance.hpp:
 include/pros/distance.h:
-include/pros/gps.hpp:
+src/../include/pros/gps.hpp:
 include/pros/gps.h:
-include/pros/imu.hpp:
+src/../include/pros/imu.hpp:
 include/pros/imu.h:
-include/pros/llemu.hpp:
+src/../include/pros/llemu.hpp:
 include/pros/llemu.h:
-include/pros/misc.hpp:
+src/../include/pros/misc.hpp:
 include/pros/misc.h:
-include/pros/motors.hpp:
+src/../include/pros/motors.hpp:
 include/pros/motors.h:
-include/pros/optical.hpp:
+src/../include/pros/optical.hpp:
 include/pros/optical.h:
-include/pros/rotation.hpp:
+src/../include/pros/rotation.hpp:
 include/pros/rotation.h:
-include/pros/rtos.hpp:
+src/../include/pros/rtos.hpp:
 include/pros/rtos.h:
-include/pros/screen.hpp:
+src/../include/pros/screen.hpp:
 include/pros/screen.h:
-include/pros/vision.hpp:
+src/../include/pros/vision.hpp:
 include/pros/vision.h:
-include/okapi/api.hpp:
+src/../include/okapi/api.hpp:
 include/okapi/api/chassis/controller/chassisControllerIntegrated.hpp:
 include/okapi/api/chassis/controller/chassisController.hpp:
 include/okapi/api/chassis/controller/chassisScales.hpp:
@@ -467,7 +475,9 @@ include/okapi/api/units/QPressure.hpp:
 include/okapi/api/units/QTorque.hpp:
 include/okapi/api/units/QVolume.hpp:
 include/okapi/impl/util/rate.hpp:
-include/autonomous.h:
-include/main.h:
-include/functions.h:
-include/motorSetup.h:
+src/../include/autonomous.h:
+src/../include/main.h:
+src/../include/functions.h:
+src/../include/../include/main.h:
+src/../include/../include/motorSetup.h:
+src/../include/../include/main.h:

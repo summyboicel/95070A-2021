@@ -25,6 +25,7 @@ void initialize() {
 	//autonSelector();
 }
 
+//function to disable
 void disabled() {}
 
 void competition_initialize() {}

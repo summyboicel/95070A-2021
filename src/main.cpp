@@ -19,7 +19,6 @@ void initialize() {
 	pros::lcd::register_btn2_cb(rightBtn);
 	Clamp.set_brake_mode(MOTOR_BRAKE_HOLD);
 	FBarL.set_brake_mode(MOTOR_BRAKE_HOLD);
-	FBarR.set_brake_mode(MOTOR_BRAKE_HOLD);
   autonSelector();
 
 	//autonSelector();
@@ -68,7 +67,6 @@ void opcontrol() {
 	master.clear();
 	Clamp.set_brake_mode(MOTOR_BRAKE_HOLD);
 	FBarL.set_brake_mode(MOTOR_BRAKE_HOLD);
-	FBarR.set_brake_mode(MOTOR_BRAKE_HOLD);
   int goalHeight = 0;
 	double prevr = 0;
 	double prevl = 0;
@@ -100,7 +98,6 @@ void opcontrol() {
       fourbarmove(-86);
     } else {
 			FBarL.set_brake_mode(MOTOR_BRAKE_HOLD);
-			FBarR.set_brake_mode(MOTOR_BRAKE_HOLD);
 			fourbarmove(0);
 		}
     pros::delay(20);

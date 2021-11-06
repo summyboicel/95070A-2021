@@ -44,7 +44,6 @@ pros::Motor FrontLeft(FLPort, true);
 pros::Motor FrontRight(FRPort, false);
 pros::Motor BackLeft(BLPort, true);
 pros::Motor BackRight(BRPort, false);
-pros::Motor FBarR(FBRPort, false);
 pros::Motor FBarL(FBLPort, true);
 
 /*
